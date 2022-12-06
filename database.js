@@ -1,5 +1,5 @@
-import sqlite3 from 'sqlite3';
-import  md5 from 'md5';
+var sqlite3 = require('sqlite3').verbose()
+var md5 = require('md5')
 
 const DBSOURCE = "db.sqlite"
 
