@@ -1,0 +1,19 @@
+{
+  "name": "final",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oapo1804/a99-Team-27.git"
+  },
+  "author": "oapo1804",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/oapo1804/a99-Team-27/issues"
+  },
+  "homepage": "https://github.com/oapo1804/a99-Team-27#readme"
+}
