@@ -8,3 +8,9 @@ args['port'];
 const port = args.port || 5000
 
 const server = app.listen(port);
+
+app.use("/", express.static("dist/final"));
+
+app.listen(port, () => {
+    console.log(`Server listening on the port::${port}`);
+});
