@@ -4,6 +4,7 @@
   "description": "final project",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,8 +17,11 @@
     "url": "https://github.com/oapo1804/a99-Team-27/issues"
   },
   "homepage": "https://github.com/oapo1804/a99-Team-27#readme",
+  "type": "module",
   "dependencies": {
     "express": "^4.18.2",
-    "minimist": "^1.2.7"
+    "md5": "^2.3.0",
+    "minimist": "^1.2.7",
+    "sqlite3": "^5.1.2"
   }
 }
