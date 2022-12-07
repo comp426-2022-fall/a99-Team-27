@@ -118,6 +118,7 @@ app.post("/api/login/", (req, res) => {
         username: req.body.username,
         password: req.body.password
     } 
+    console.log(data[username])
     console.log(data.username)
     console.log(data.password)
     res.statusCode = 200;
