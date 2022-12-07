@@ -22,9 +22,9 @@ app.listen(HTTP_PORT, () => {
 
 
 // Root endpoint
-app.get("/", (req, res, next) => {
-    res.json({"message":"Ok"})
-});
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/main/home.html');
+  });
 
 // Insert here other API endpoints
 app.get("/api/users", (req, res, next) => {
