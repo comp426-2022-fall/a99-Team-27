@@ -12,7 +12,7 @@ async function registering(event){
     console.log(formEvent);
     const formData = new FormData(formEvent);
     const registerResult = await sendData({formData, url})
-    document.getElementById("registervalue").innerHTML="you are registered"
+    document.getElementById("registervalue").innerHTML="You successfully registered"
 }
 const loginForm = document.getElementById("login");
 loginForm.addEventListener("submit", logingin);
