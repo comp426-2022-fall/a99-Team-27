@@ -18,6 +18,7 @@ var HTTP_PORT = 8000
 app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
+app.use(express.static('./main'));
 // Root endpoint
 app.get("/", (req, res, next) => {
     res.json({"message":"Ok"})
@@ -113,3 +114,48 @@ app.delete("/api/user/:id", (req, res, next) => {
 app.use(function(req, res){
     res.status(404);
 });
+
+app.post('/app/login', (req, res) => {
+    //Respond w status 200
+    var isUserNamePresent = false
+    let data = {
+        username: req.body.username,
+        password:req.body.password
+    } 
+   let i = -1;
+    console.log(data.username)
+    console.log(data.password)
+    res.statusCode = 200;
+    var login = false
+    var stmt = db.prepare("SELECT * FROM userinfo WHERE username=data.username AND password=data.password").all()
+    // for (x in stmt){
+    //     if (stmt[x]["username"] == data.username){ 
+    //         isUserNamePresent = true
+    //         i = x;
+    //     }
+    // }
+    // if(isUserNamePresent){
+    //     if (stmt[i]["password"] == data.password){
+    //         login = true
+    //     }else{
+    //         res.status(200).json({"status":"incorrectPassword"})
+    //         console.log("Incorrect Password")
+    //     }
+            
+        
+    // }else{
+    //     res.status(200).json({"status":"badUsername"})
+    //     console.log("Username not recognized")
+    // }
+    if (stmt.length()>0 || stmt !=null){
+        login = true
+    }
+    if(login){
+        res.status(200).json({"status":"LOGIN", "user":data.username})
+        console.log("LOGIN")
+    }else {
+        res.status(200).json({"status":"incorrect"})
+        console.log("incorrect user or pass")
+    }
+});
+
