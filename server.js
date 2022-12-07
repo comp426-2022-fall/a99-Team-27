@@ -69,7 +69,7 @@ app.post("/api/user/", (req, res, next) => {
             "data": data,
             "id" : this.lastID
         })
-        console.log(res)
+        // console.log(res)
     });
 })
 
@@ -118,23 +118,22 @@ app.post("/api/login/", (req, res) => {
         username: req.body.username,
         password: req.body.password
     } 
-    console.log(data[username])
     console.log(data.username)
     console.log(data.password)
     res.statusCode = 200;
     var login = false
-    var stmt = db.prepare((`SELECT * FROM user`)).all()
-    console.log(stmt[0][data.username])
-    if(stmt.length > 0){
-        login = true
-    }
-    if(login){
-        res.status(200).json({"status":"LOGIN", "user":data.username})
-        console.log("LOGIN")
-    }else{
-        res.status(200).json({"status":"BAD"})
-        console.log("NO USER")
-    }
+    var stmt = db.get((`SELECT * FROM user WHERE  username = ? AND password = ?`), [data.username, md5(data.password)], (err, row) => {
+        if (err){
+            return console.error(err.message)
+        }
+        return row  
+            ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":data.username}) & console.log("LOGIN") 
+            : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
+    });
+    console.log(stmt)
+    // if(stmt.length > 0){
+    //     login = true
+    // }
 });
 
 // app.post("/api/login", async (req, res) => {

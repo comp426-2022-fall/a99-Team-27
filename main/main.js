@@ -4,15 +4,15 @@ loginForm.addEventListener("submit", logingin);
 
 async function logingin(event){
     event.preventDefault();
-    console.log(event)
+    // console.log(event)
     var endpoint = "api/login/";
     var url = "http://localhost:8000/" + endpoint;
-    console.log(url)
+    // console.log(url)
     const formEvent = event.target;
-    console.log(formEvent);
+    // console.log(formEvent);
     const formData = new FormData(formEvent);
     const loginResult = await sendData({formData, url})
-    console.log(loginResult)
+    // console.log(loginResult)
     if(loginResult.status =="LOGIN"){
         document.getElementById("loginvalue").innerHTML=loginResult.user
     }else {
@@ -26,14 +26,14 @@ const registerForm = document.getElementById("register");
 registerForm.addEventListener("submit", registering);
 
 async function registering(event){
-    console.log(event)
+    // console.log(event)
     event.preventDefault();
 
     var endpoint = "api/user/";
     var url = "http://localhost:8000/" + endpoint;
-    console.log(url)
+    // console.log(url)
     const formEvent = event.target;
-    console.log(formEvent);
+    // console.log(formEvent);
     const formData = new FormData(formEvent);
     const registerResult = await sendData({formData, url})
     document.getElementById("registervalue").innerHTML="You successfully registered"
@@ -43,7 +43,7 @@ async function registering(event){
 async function sendData({formData, url}) {
     console.log("in send data")
     const plainFormData  = Object.fromEntries(formData.entries());
-    console.log(plainFormData)
+    // console.log(plainFormData)
     const formDataJson = JSON.stringify(plainFormData);
     const options =  {
         method:"POST", 
@@ -53,7 +53,7 @@ async function sendData({formData, url}) {
         },
         body:formDataJson
     };
-    console.log(url, options)
+    // console.log(url, options)
     const response = await fetch(url, options);
     return response.json()
 }
