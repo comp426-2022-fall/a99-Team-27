@@ -1,7 +1,6 @@
 const { application } = require("express");
 
 
-
 async function sendData({formData, url}) {
     const plainFormData  = Object.fromEntries(formData.entries());
 
