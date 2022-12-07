@@ -3,7 +3,7 @@
 	<title> Productivity Tracker </title>
   </head>
   <body>
-    <form>
+    <form id="register">
         <h1> Registration </h1>
         <table> 
             <tr> 
@@ -11,7 +11,7 @@
                     Username: 
                 </td> 
                 <td> 
-                    <input type=”text” name=””> 
+                    <input id="username" type=”text” name=”username” required> 
                 </td>
             </tr>
             <tr>
@@ -19,9 +19,10 @@
                     Password: 
                 </td>
                 <td> 
-                    <input type=”Password” name=””> 
+                    <input id="password" type=”password” name=”pwd” required> 
                 </td>
             </tr>
+            <button id="submit" type="submit"> Submit </button>
         </table>
     </form>
   </body>
