@@ -9,7 +9,7 @@ var bodyParser = require("body-parser");
 const args = minimist(process.argv.slice(2));
 var app = express()
 var bodyParser = require("body-parser");
-app.use(express.static('./main'));
+//app.use(express.static('./main'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -74,16 +74,14 @@ app.post("/api/user/", (req, res, next) => {
 app.patch("/api/user/:id", (req, res, next) => {
     var data = {
         name: req.body.name,
-        email: req.body.email,
         password : req.body.password ? md5(req.body.password) : null
     }
     db.run(
         `UPDATE user set 
            name = COALESCE(?,name), 
-           email = COALESCE(?,email), 
            password = COALESCE(?,password) 
            WHERE id = ?`,
-        [data.name, data.email, data.password, req.params.id],
+        [data.name, data.password, req.params.id],
         function (err, result) {
             if (err){
                 res.status(400).json({"error": res.message})
@@ -135,6 +133,7 @@ app.post("/api/login/", (req, res) => {
         console.log("NO USER")
     }
 });
+
 
 // Default response for any other request
 app.use(function(req, res){
