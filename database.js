@@ -12,14 +12,16 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         console.log('Connected to the SQLite database.')
         db.run(`CREATE TABLE user (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            username text,  
-            password text, 
+            username text, 
+            password text
             )`,
         (err) => {
             if (err) {
                 // Table already created
+                console.log(err)
             }else{
                 // Table just created, creating some rows
+                console.log("created")
                 var insert = 'INSERT INTO user (username, password) VALUES (?,?)'
                 db.run(insert, ["admin",md5("admin123456")])
                 db.run(insert, ["user",md5("user123456")])
@@ -29,4 +31,4 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
 });
 
 
-module.exports = db;
+module.exports = db

@@ -1,19 +1,4 @@
 
-const registerForm = document.getElementById("register");
-registerForm.addEventListener("submit", registering);
-
-async function registering(event){
-    event.preventDefault();
-    console.log(event)
-    var endpoint = "api/user/";
-    var url = "http://localhost:8000/" + endpoint;
-    console.log(url)
-    const formEvent = event.target;
-    console.log(formEvent);
-    const formData = new FormData(formEvent);
-    const registerResult = await sendData({formData, url})
-    document.getElementById("registervalue").innerHTML="You successfully registered"
-}
 const loginForm = document.getElementById("login");
 loginForm.addEventListener("submit", logingin);
 
@@ -34,6 +19,24 @@ async function logingin(event){
         document.getElementById("loginvalue").innerHTML=loginResult.status
     }
     
+}
+
+
+const registerForm = document.getElementById("register");
+registerForm.addEventListener("submit", registering);
+
+async function registering(event){
+    console.log(event)
+    event.preventDefault();
+
+    var endpoint = "api/user/";
+    var url = "http://localhost:8000/" + endpoint;
+    console.log(url)
+    const formEvent = event.target;
+    console.log(formEvent);
+    const formData = new FormData(formEvent);
+    const registerResult = await sendData({formData, url})
+    document.getElementById("registervalue").innerHTML="You successfully registered"
 }
 
 
