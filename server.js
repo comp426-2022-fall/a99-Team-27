@@ -9,7 +9,7 @@ var bodyParser = require("body-parser");
 const args = minimist(process.argv.slice(2));
 var app = express()
 var bodyParser = require("body-parser");
-//app.use(express.static('./main'));
+app.use(express.static('./main'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -56,11 +56,12 @@ app.post("/api/user/", (req, res, next) => {
         username: req.body.username,
         password : md5(req.body.password)
     }
-    var sql ='INSERT INTO user (name, password) VALUES (?,?)'
-    var params =[data.name, data.password]
+    var sql ='INSERT INTO user (username, password) VALUES (?,?)'
+    var params =[data.username, data.password]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
+            console.log('error running', err.message)
             return;
         }
         res.json({
@@ -68,6 +69,7 @@ app.post("/api/user/", (req, res, next) => {
             "data": data,
             "id" : this.lastID
         })
+        console.log(res)
     });
 })
 
@@ -121,8 +123,8 @@ app.post("/api/login/", (req, res) => {
     console.log(data.password)
     res.statusCode = 200;
     var login = false
-    var stmt = db.prepare("SELECT * FROM user WHERE username=data.username AND pass=data.password").all()
-    console.log(stmt)
+    var stmt = db.prepare((`SELECT * FROM user`)).all()
+    console.log(stmt[0][data.username])
     if(stmt.length > 0){
         login = true
     }
@@ -135,6 +137,36 @@ app.post("/api/login/", (req, res) => {
     }
 });
 
+// app.post("/api/login", async (req, res) => {
+  
+//     try {      
+//       const { username, password } = req.body;
+//           // Make sure there is an Email and Password in the request
+//           if (!(username && password)) {
+//               res.status(400).send("All input is required");
+//           }
+              
+//           let user = [];
+          
+//           var sql = "SELECT * FROM Users WHERE username = ?";
+//           db.all(sql, username, function(err, rows) {
+//               if (err){
+//                   res.status(400).json({"error": err.message})
+//                   return;
+//               }
+  
+//               rows.forEach(function (row) {
+//                   user.push(row);                
+//               })
+    
+  
+//              return res.status(200).send(user);                
+//           });	
+      
+//       } catch (err) {
+//         console.log(err);
+//       }    
+//   });
 
 // Default response for any other request
 app.use(function(req, res){
