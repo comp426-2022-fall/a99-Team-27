@@ -1,4 +1,4 @@
-## Planning guide:
+## Planning guide
 
 12/3
 
@@ -21,7 +21,7 @@ Work mostly on frontend development and website UI
 Fixing bugs and touching up CSS on frontend
 
 
-## Group Member Roles:
+## Group Member Roles
 
 Oriana: focused mostly on front end and debugging
 
