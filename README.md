@@ -1,12 +1,15 @@
-# a99 Final Project
+# a99-Team-27 Productivity Tracker
 
 ## Summary 
 
-COMP426 final project template boilerplate.
-All your code and documentation goes here.
-Change this text to be a brief description of your final project.
-Put the name of your project in the header above.
-You will change everything below to be the main technical documentation, as outlined below.
+In this web application, we wanted to create a way to promote overall wellness/productivity. We attempted to promote this by suggesting a list of activities/exercises that the user can choose to do daily. The activities that are performed can be checked and logged, which will keep track of how many times you perform a certain activity. This will allow the user to reflect on their overall productivity to visualize how often they perform tasks related to their mental/physical health. 
+
+## Setup
+
+1. Clone this repository using git clone and the SSH link
+2. Run the command ```npm install``` to install the needed dependencies (the dependencies used include: express, sqlite3, md5, body-parser, minimist)
+3. Run ```npm run start```
+4. Navigate to http://localhost:8000/ in your web browser to view our web application
 
 ## First steps
 
@@ -23,6 +26,8 @@ Other steps that you will need to take after your team has accepted the assignme
 10. Use **Issues** to identify and track bugs and also to communicate about various aspects of the project.
 
 ## Team mangement
+
+Our planning and work division can be found in this file: 
 
 Plan to meet with your team ASAP.
 Talk through identifying roles within your team.
@@ -46,8 +51,15 @@ Some basic roles you will want to consider:
 You will notice that there are more roles than people in your group.
 That is because you will all be doing a hybrid job of managing a thing while working on other things.
 
-## Assignment instructions
+## Instructions
 
-And that is about all you need to get started.
+To use our application, create a new user account under the Registration section. Next, log in with the username and password you created and click submit. To log your activity progress simply check the boxes of the activities you completed and click submit. A log of the number of times you completed the activities will display below. 
 
-Good skill and be creative!
+## Future Advancements
+
+In the future, this can be expanded upon by encouraging users to do the activities more. One way to foster encouragement could be to provide the user with rewards after they complete wellness activities a certain amount of times, which will promote positive reinforcement.
+
+## Video demo link
+
+
+##
