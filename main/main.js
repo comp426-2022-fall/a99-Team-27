@@ -14,7 +14,17 @@ async function logingin(event){
     const loginResult = await sendData({formData, url})
     // console.log(loginResult)
     if(loginResult.status =="LOGIN"){
-        document.getElementById("loginvalue").innerHTML=loginResult.user
+        document.getElementById("loginvalue").innerHTML = loginResult.user
+        document.getElementById("yogavalue").innerHTML = loginResult.yoga
+        document.getElementById("runvalue").innerHTML = loginResult.run
+        document.getElementById("meditatevalue").innerHTML = loginResult.meditate
+        document.getElementById("breathingvalue").innerHTML = loginResult.breathing
+        document.getElementById("gymvalue").innerHTML = loginResult.gym
+        document.getElementById("therapyvalue").innerHTML = loginResult.therapy
+        document.getElementById("readvalue").innerHTML = loginResult.read
+
+
+
     }else {
         document.getElementById("loginvalue").innerHTML=loginResult.status
     }
@@ -56,6 +66,8 @@ async function sendData({formData, url}) {
     const response = await fetch(url, options);
     return response.json()
 }
+
+
 
 // const goalsList = document.getElementById("goals");
 // goalsList.addEventListener("submit", goalsTracker);

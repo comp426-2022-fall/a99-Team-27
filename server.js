@@ -180,7 +180,6 @@ app.delete("/api/user/:id", (req, res, next) => {
 app.post("/api/login/", (req, res) => {
     //Respond w status 200
     console.log("in login")
-    var isUserNamePresent = false
     let data = {
         username: req.body.username,
         password: req.body.password,
@@ -195,24 +194,21 @@ app.post("/api/login/", (req, res) => {
     console.log(data.username)
     console.log(data.run)
     res.statusCode = 200;
-    var login = false
     db.get((`SELECT * FROM user WHERE  username = ? AND password = ?`), [data.username, md5(data.password)], (err, row) => {
         
         if (err){
             return console.error(err.message)
         }
-        var yoga = parseInt(row.yoga)
-        var run = parseInt(row.run)
-        var meditate = parseInt(row.meditate)
-        var breathing = parseInt(row.breathing)
-        var gym = parseInt(row.gym)
-        var therapy = parseInt(row.therapy)
-        var read = parseInt(row.read)
+        let yoga = parseInt(row.yoga)
+        let run = parseInt(row.run)
+        let meditate = parseInt(row.meditate)
+        let breathing = parseInt(row.breathing)
+        let gym = parseInt(row.gym)
+        let therapy = parseInt(row.therapy)
+        let read = parseInt(row.read)
 
         if (typeof data.yoga != "undefined"){
             yoga += 1
-            total += 1
-            console.log("went into yoga")
             //var sql = "UPDATE user SET (yoga "data.yoga") =(?,?,?,?,?,?,?) WHERE id = ?"
         }
         if (typeof data.run != "undefined"){
@@ -220,7 +216,6 @@ app.post("/api/login/", (req, res) => {
         }
         if (typeof data.meditate != "undefined"){
             meditate += 1
-            console.log(meditate)
         } 
         if (typeof data.breathing != "undefined"){
             breathing += 1
@@ -251,7 +246,7 @@ app.post("/api/login/", (req, res) => {
               })
         //var list = [row.yoga, row.run, row.meditate, row.breathing, row.gym, row.therapy, row.read]
         return row
-            ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":data.username}) & console.log("LOGIN") 
+            ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":row.username, "yoga":parseInt(yoga), "run":parseInt(run), "meditate":parseInt(meditate),"breathing":parseInt(breathing), "gym":parseInt(gym), "therapy":parseInt(therapy), "read":parseInt(read), "total": total}) & console.log("LOGIN") 
             : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
     });
 });
@@ -286,6 +281,8 @@ app.post("/api/login/", (req, res) => {
 //             : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
 //     });
 // });
+
+app.post
 
 // Default response for any other request
 app.use(function(req, res){
