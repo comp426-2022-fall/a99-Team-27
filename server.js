@@ -211,6 +211,7 @@ app.post("/api/login/", (req, res) => {
 
         if (typeof data.yoga != "undefined"){
             yoga += 1
+            total += 1
             console.log("went into yoga")
             //var sql = "UPDATE user SET (yoga "data.yoga") =(?,?,?,?,?,?,?) WHERE id = ?"
         }
@@ -236,6 +237,8 @@ app.post("/api/login/", (req, res) => {
         }
 
         var sql = "UPDATE user SET (yoga, run, meditate, breathing, gym, therapy, read) =(?,?,?,?,?,?,?) WHERE id = ?"
+        var total = parseInt(yoga) + parseInt(run) + parseInt(meditate) + parseInt(breathing) + parseInt(gym) + parseInt(therapy) + parseInt(read)
+        console.log(total)
         var params = [parseInt(yoga), parseInt(run), parseInt(meditate), parseInt(breathing), parseInt(gym), parseInt(therapy), parseInt(read), row.id]
         db.run(sql, params, (err, result)  => {
               if (err){

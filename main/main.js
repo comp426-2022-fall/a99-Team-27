@@ -18,7 +18,6 @@ async function logingin(event){
     }else {
         document.getElementById("loginvalue").innerHTML=loginResult.status
     }
-    
 }
 
 
