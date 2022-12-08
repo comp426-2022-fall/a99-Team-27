@@ -27,7 +27,7 @@ Other steps that you will need to take after your team has accepted the assignme
 
 ## Team mangement
 
-Our planning and work division can be found in this file: 
+Our planning and work division can be found in this file: [planning](#https://github.com/comp426-2022-fall/a99-Team-27/blob/main/docs/management.md)
 
 Plan to meet with your team ASAP.
 Talk through identifying roles within your team.
