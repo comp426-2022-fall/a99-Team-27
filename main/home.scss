@@ -54,6 +54,28 @@ mark {
   }
 }
 
+.card2 {
+  background: #c09bbb;
+  padding: calc(4 * var(--size-bezel));
+  margin-top: calc(1 * var(--size-bezel));
+  margin-left: calc(3 * var(--size-bezel)) ;
+  margin-right: calc(3 * var(--size-bezel)) ;
+  border: 3px solid var(--color-shadow, currentColor);
+  box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+  
+  &--inverted {
+    --color-background: var(--color-dark);
+    color: var(--color-light);
+    --color-shadow: var(--color-accent);
+  }
+  
+ 
+  
+  *:first-child {
+    margin-top: 0;
+  }
+}
+
 
 .l-design-widht {
   max-width: 40rem;

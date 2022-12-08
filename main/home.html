@@ -39,16 +39,18 @@
     <body>
     
       <div style = "display: flex">
-        <img src="header.png" style = "height: 20em">
+        <img src="header.png" style = "height: 16em">
         <div class="card card--inverted">
         <h2 style = "font-family: Georgia, 'Times New Roman', Times, serif;">Register To Begin</h2>
         <form id="register" style = "display:block">
           <label class="input" style="display:block">
             <!-- user input-->
             <!-- Username:<br> -->
-            <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);"class="input__field" id="registerUsername" type="text" name="username" placeholder="Username" required>
+            <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+            display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);"class="input__field" id="registerUsername" type="text" name="username" placeholder="Username" required>
             <!-- Password:<br> -->
-            <input style="border:3px solid #5c3b53; background-color:#e7d0e4;  box-sizing: border-box;display: block;width: 100%; padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class ="input__field" id="registerPassword" type="password" name="password" placeholder="Password" required>
+            <input style="border:3px solid #5c3b53; background-color:#e7d0e4;  box-sizing: border-box;
+            display: block;width: 100%; padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class ="input__field" id="registerPassword" type="password" name="password" placeholder="Password" required>
             <!-- submit button -->
             <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-weight:bolder"
@@ -63,48 +65,59 @@
      
      <br>
     </head>
-    <form id="login" style = "display:block">
-        <div class="card card--inverted">
+    <form id="login" style = "display:flex">
+        <div class="card2 card--inverted">
           <h2>Login To Continue</h2>
         
             <label class="input" style="display:block">
               <!-- user input-->
               <!-- Username:<br> -->
-              <input class="input__field" id="loginUsername" type="text" name="username" placeholder="Username" required>
+              <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+              display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class="input__field" id="loginUsername" type="text" name="username" placeholder="Username" required>
               <!-- Password:<br> -->
-              <input class ="input__field" id="loginPassword" type="password" name="password" placeholder="Password" required>
+              <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+              display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class ="input__field" id="loginPassword" type="password" name="password" placeholder="Password" required>
               <!-- submit button -->
-              <input type="submit" id="submit">
+              <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              font-weight:bolder" type="submit" id="submit">
             </label>
              
           </div>
           <!-- user input-->
     
-          <!-- Yoga -->
-          <input type="checkbox" id="yoga" name="yoga">
-          <label for="yoga"> Yoga </label>
-          <!-- Go for a run! -->
-          <input type="checkbox" id="run" name="run">
-          <label for="run"> Go for a run! </label>
-          <!-- Meditate -->
-          <input type="checkbox" id="meditate" name="meditate">
-          <label for="meditate"> Meditate </label>
-          <!-- Breathing Excercises -->
-          <input type="checkbox" id="breathing" name="breathing">
-          <label for="breathing"> Breathing Excercises </label>
-          <!-- Go to the gym! -->
-          <input type="checkbox" id="gym" name="gym">
-          <label for="gym"> Go to the gym! </label>
-          <!-- Therapy -->
-          <input type="checkbox" id="therapy" name="therapy">
-          <label for="therapy"> Therapy </label>
-          <!-- Read -->
-          <input type="checkbox" id="read" name="read">
-          <label for="read"> Read </label>
-          <!-- submit button -->
-          <input type="submit" value="Submit">
+           <!-- Yoga -->
+        <div style = "display:block">
+          <h4> Logged in as: </h4>
+          <p id="loginvalue"> </p>
+          <h3 style = "font-family: Georgia, 'Times New Roman', Times, serif; 
+          color:#0a090a; font-size:large;font-weight:bolder"> Select the activites you've completed today: <span name="directions"></span></h3>
+        <input type="checkbox" id="yoga" name="yoga">
+        <label for="yoga"> Yoga <span>&#x1F9D8</span></label>
+        <!-- Go for a run! -->
+        <input type="checkbox" id="run" name="run">
+        <label for="run"> Go for a run! <span>&#x1F3C3</span></label>
+        <!-- Meditate -->
+        <input type="checkbox" id="meditate" name="meditate">
+        <label for="meditate"> Meditate <span>&#x1F9CE</span></label>
+        <!-- Breathing Excercises -->
+        <input type="checkbox" id="breathing" name="breathing">
+        <label for="breathing"> Breathing Excercises <span>&#x1FAC1</span></label>
+        <!-- Go to the gym! -->
+        <input type="checkbox" id="gym" name="gym">
+        <label for="gym"> Go to the gym! <span>&#x1F3CB</span></label>
+        <!-- Therapy -->
+        <input type="checkbox" id="therapy" name="therapy">
+        <label for="therapy"> Therapy <span>&#x1F60C</span></label>
+        <!-- Read -->
+        <input type="checkbox" id="read" name="read">
+        <label for="read"> Read <span>&#x1F4D6</span></label>
+        <!-- submit button -->
+        <input type="submit" value="Submit">
+        <h4> Total Producitivity Points: </h4>
+        <p id="totalvalue"> </p>
+        </div>
       </form>
-    <h4> Logged in as: </h4>
+    <!-- <h4> Logged in as: </h4>
     <p id="loginvalue"> </p>
     <h4> Yoga: </h4>
     <p id="yogavalue"> </p>
@@ -120,11 +133,11 @@
     <p id="therapyvalue"> </p>
     <h4> Read: </h4>
     <p id="readvalue"> </p>
-    <!-- <h4> Total: </h4>
+    <h4> Total: </h4>
     <p id="totalvalue"> </p> -->
     
-    <h4> Total Producitivity Points: </h4>
-    <p id="totalvalue"> </p>
+    <!-- <h4> Total Producitivity Points: </h4>
+    <p id="totalvalue"> </p> -->
 
 
     
