@@ -1,28 +1,27 @@
-Planning:
-
+## Planning guide:
 
 12/3
 
-Created repository, meet as a group to discuss overall plans
+Create repository, meet as a group to discuss overall plans
 
 12/4
 
-Collaborated to creat UI wireframes and decided on website layout
+Collaborate to create UI wireframes and decide on website layout
 
 12/6
 
-Started basic setup and worked on backend development
+Start basic setup and work mostly on backend development
 
 12/7
 
-Work on frontend development
+Work mostly on frontend development and website UI
 
 12/8
 
 Fixing bugs and touching up CSS on frontend
 
 
-Group Member Roles:
+## Group Member Roles:
 
 Oriana: focused mostly on front end and debugging
 
