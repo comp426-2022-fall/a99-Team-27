@@ -65,14 +65,25 @@
      
      <br>
     </head>
-    <p style = "font-family: Georgia, 'Times New Roman', Times, serif; 
-    color:#5c3b53; font-size:large;font-weight:bolder">Login</p>
+    <div style="display:flex">
     <form id="login">
       <!-- user input-->
-      Username:<br>
-      <input id="loginUsername" type="text" name="username" placeholder="Username" required><br><br>
-      Password:<br>
-      <input id="loginPassword" type="password" name="password" placeholder="Password" required><br><br>
+      <!-- Username:<br> -->
+      <div class="card card--inverted">
+      <h2 style = "font-family: Georgia, 'Times New Roman', Times, serif;">Login To Continue</h2>
+
+      <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+      display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class="input__field" id="loginUsername" type="text" name="username" placeholder="Username" required><br><br>
+      <!-- Password:<br> -->
+      <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+      display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class="input__field"id="loginPassword" type="password" name="password" placeholder="Password" required><br><br>
+      <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight:bolder" type="submit" value="Submit">
+      </div>
+      <h4> Logged in as: </h4>
+      <p id="loginvalue"> </p>
+
+      <div class="card card--inverted">
       <h3 style = "font-family: Georgia, 'Times New Roman', Times, serif; 
       color:#0a090a; font-size:large;font-weight:bolder"> Select the activites you've completed today: <span name="directions"></span></h3>
       <!-- Yoga -->
@@ -97,10 +108,12 @@
       <input type="checkbox" id="read" name="read">
       <label for="read"> Read <span>&#x1F4D6</span></label>
       <!-- submit button -->
-      <input type="submit" value="Submit">
+      <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-weight:bolder" type="submit" value="Submit">
+      </div>
   </form>
-    <h4> Logged in as: </h4>
-    <p id="loginvalue"> </p>
+  </div>
+    <div style = "display:block; padding-left: 5em;">
     <h4> Yoga: </h4>
     <p id="yogavalue"> </p>
     <h4> Run: </h4>
@@ -115,11 +128,11 @@
     <p id="therapyvalue"> </p>
     <h4> Read: </h4>
     <p id="readvalue"> </p>
-    <!--<h4> Total: </h4>
-    <p id="totalvalue"> </p> -->
+    <h4> Total Productivity Points: </h4>
+    <p id="totalvalue"> </p>
+  </div>
+  
     
-    <!-- <h4> Total Producitivity Points: </h4>
-    <p id="totalvalue"> </p> -->
 
 
     
