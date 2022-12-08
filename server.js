@@ -56,8 +56,8 @@ app.post("/api/user/", (req, res, next) => {
         username: req.body.username,
         password : md5(req.body.password)
     }
-    var sql ='INSERT INTO user (username, password) VALUES (?,?)'
-    var params =[data.username, data.password]
+    var sql ='INSERT INTO user (username, password, yoga, run, meditate, breathing, gym, therapy, read) VALUES (?,?,?,?,?,?,?,?,?)'
+    var params =[data.username, data.password,0,0,0,0,0,0,0]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -116,52 +116,91 @@ app.post("/api/login/", (req, res) => {
     var isUserNamePresent = false
     let data = {
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        yoga: req.body.yoga,
+        run: req.body.run,
+        meditate: req.body.meditate,
+        breathing: req.body.breathing,
+        gym: req.body.gym,
+        therapy: req.body.therapy,
+        read: req.body.read
     } 
-    console.log(data.username)
-    console.log(data.password)
+
     res.statusCode = 200;
     var login = false
     db.get((`SELECT * FROM user WHERE  username = ? AND password = ?`), [data.username, md5(data.password)], (err, row) => {
         if (err){
             return console.error(err.message)
         }
-        return row  
+        if (typeof data.yoga != "undefined"){
+            row.yoga += 1
+        }
+        if (typeof data.run != "undefined"){
+            row.run += 1
+        }
+        if (typeof data.meditate != "undefined"){
+           row.meditate +=  1
+        } 
+        if (typeof data.breathing != "undefined"){
+            row.breathing +=  1
+        } 
+        if (typeof data.gym != "undefined"){
+            row.gym += 1
+        } 
+        if (typeof data.therapy != "undefined"){
+            row.therapy += 1
+        } 
+        if (typeof data.read != "undefined"){
+            row.read += 1
+        }
+        //var sql = "UPDATE table_name SET (yoga, run, meditate, breathing, gym, therapy, read) =(?,?,?,?,?,?,?) WHERE id = ?"
+        // var params = [yoga, run, meditate, breathing, gym, therapy, read,row.id]
+        // db.run(sql, params, (err, result)  => {
+        //     if (err){
+        //         res.status(400).json({"error": err.message})
+        //         console.log('error running', err.message)
+        //         return;
+        //     }
+        //     console.log("added to database")
+        //     return
+        //     })
+        //var list = [row.yoga, row.run, row.meditate, row.breathing, row.gym, row.therapy, row.read]
+        return row
             ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":data.username}) & console.log("LOGIN") 
             : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
     });
 });
 
-// app.post("/api/login", async (req, res) => {
-  
-//     try {      
-//       const { username, password } = req.body;
-//           // Make sure there is an Email and Password in the request
-//           if (!(username && password)) {
-//               res.status(400).send("All input is required");
-//           }
-              
-//           let user = [];
-          
-//           var sql = "SELECT * FROM Users WHERE username = ?";
-//           db.all(sql, username, function(err, rows) {
-//               if (err){
-//                   res.status(400).json({"error": err.message})
-//                   return;
-//               }
-  
-//               rows.forEach(function (row) {
-//                   user.push(row);                
-//               })
-    
-  
-//              return res.status(200).send(user);                
-//           });	
-      
-//       } catch (err) {
-//         console.log(err);
-//       }    
-//   });
+// app.post("/api/goals/", (req, res) => {
+//     //Respond w status 200
+//     console.log("in goals")
+//     let data = {
+//         yoga: req.body.yoga,
+//         run: req.body.password,
+//         meditate: req.body.meditate,
+//         breathing: req.body.breathing,
+//         gym: req.body.gym,
+//         therapy: req.body.therapy,
+//         read: req.body.read
+//     } 
+//     console.log(data.yoga)
+//     console.log(data.run)
+//     console.log(data.meditate)
+//     console.log(data.breathing)
+//     console.log(data.gym)
+//     console.log(data.therapy)
+//     console.log(data.read)
+//     res.statusCode = 200;
+//     var login = false
+//     db.get((`SELECT * FROM user WHERE  username = ? AND password = ?`), [data.username, md5(data.password)], (err, row) => {
+//         if (err){
+//             return console.error(err.message)
+//         }
+//         return row  
+//             ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":data.username}) & console.log("LOGIN") 
+//             : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
+//     });
+// });
 
 // Default response for any other request
 app.use(function(req, res){

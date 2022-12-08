@@ -57,3 +57,18 @@ async function sendData({formData, url}) {
     const response = await fetch(url, options);
     return response.json()
 }
+
+// const goalsList = document.getElementById("goals");
+// goalsList.addEventListener("submit", goalsTracker);
+
+// async function goalsTracker(event){
+//     // console.log(event)
+//     var endpoint = "api/goals/";
+//     var url = "http://localhost:8000/" + endpoint;
+//     // console.log(url)
+//     const formEvent = event.target;
+//     // console.log(formEvent);
+//     const formData = new FormData(formEvent);
+//     const registerResult = await sendData({formData, url})
+//     //document.getElementById("").innerHTML="Here are your goals:"
+// }
