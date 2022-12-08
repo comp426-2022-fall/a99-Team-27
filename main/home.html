@@ -1,8 +1,69 @@
 <html>
+  <div style = "background-color:#e7d0e4">
   <head>
-	<title> Productivity Tracker </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #5c3b53;
+      color: white;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="topnav">
+      <a class="active" href="#home"> Productivity Tracker </a>
+      <!-- <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a> -->
+    </div>
+    
+    <div style = "display: flex">
+      <img src="header.png" style = "height: 20em">
+      <div style = "display: block; padding: 40px">
+      <p style = "font-family: Georgia, 'Times New Roman', Times, serif; 
+      color:#5c3b53; font-size:large;font-weight:bolder">Register To Begin</p>
+      <form id="register" style = "font-family: Georgia, 'Times New Roman', Times, serif; 
+      color:#0a090a; font-size:large;font-weight:bolder">
+          <!-- user input-->
+          Username:<br>
+          <input id="registerUsername" type="text" name="username" placeholder="Username" required><br><br>
+          Password:<br>
+          <input id="registerPassword" type="password" name="password" placeholder="Password" required><br><br>
+          <!-- submit button -->
+          <input type="submit" value="Submit">
+      </form>
+      </div>
+      <p id="registervalue"></p>
+    </div>
+    
+  
+    
   </head>
-  <body>
     <p>Login</p>
     <form id="login">
         <!-- user input-->
@@ -10,22 +71,54 @@
         <input id="loginUsername" type="text" name="username" placeholder="Username" required><br><br>
         Password:<br>
         <input id="loginPassword" type="password" name="password" placeholder="Password" required><br><br>
+        <!-- Yoga -->
+        <input type="checkbox" id="yoga" name="yoga">
+        <label for="yoga"> Yoga </label>
+        <!-- Go for a run! -->
+        <input type="checkbox" id="run" name="run">
+        <label for="run"> Go for a run! </label>
+        <!-- Meditate -->
+        <input type="checkbox" id="meditate" name="meditate">
+        <label for="meditate"> Meditate </label>
+        <!-- Breathing Excercises -->
+        <input type="checkbox" id="breathing" name="breathing">
+        <label for="breathing"> Breathing Excercises </label>
+        <!-- Go to the gym! -->
+        <input type="checkbox" id="gym" name="gym">
+        <label for="gym"> Go to the gym! </label>
+        <!-- Therapy -->
+        <input type="checkbox" id="therapy" name="therapy">
+        <label for="therapy"> Therapy </label>
+        <!-- Read -->
+        <input type="checkbox" id="read" name="read">
+        <label for="read"> Read </label>
         <!-- submit button -->
         <input type="submit" value="Submit">
     </form>
-    <p id="loginvalue"></p>
+    <h4> Username: </h4>
+    <p id="loginvalue"> </p>
+    <h4> Yoga: </h4>
+    <p id="yogavalue"> </p>
+    <h4> Run: </h4>
+    <p id="runvalue"> </p>
+    <h4> Meditate: </h4>
+    <p id="meditatevalue"> </p>
+    <h4> Breathing: </h4>
+    <p id="breathingvalue"> </p>
+    <h4> Gym: </h4>
+    <p id="gymvalue"> </p>
+    <h4> Therapy: </h4>
+    <p id="therapyvalue"> </p>
+    <h4> Read: </h4>
+    <p id="readvalue"> </p>
+    <!-- <h4> Total: </h4>
+    <p id="totalvalue"> </p> -->
+    
+    
 
-    <p>Register your account below</p>
-    <form id="register">
-        <!-- user input-->
-        Username:<br>
-        <input id="registerUsername" type="text" name="username" placeholder="Username" required><br><br>
-        Password:<br>
-        <input id="registerPassword" type="password" name="password" placeholder="Password" required><br><br>
-        <!-- submit button -->
-        <input type="submit" value="Submit">
-    </form>
-    <p id="registervalue"></p>
+
+    
     <script src="./main.js"></script>
   </body>
+  </div>
 </html>
