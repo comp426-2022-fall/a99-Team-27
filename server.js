@@ -116,12 +116,12 @@ app.post("/api/login/", (req, res) => {
     var isUserNamePresent = false
     let data = {
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+
     } 
     console.log(data.username)
     console.log(data.password)
     res.statusCode = 200;
-    var login = false
     db.get((`SELECT * FROM user WHERE  username = ? AND password = ?`), [data.username, md5(data.password)], (err, row) => {
         if (err){
             return console.error(err.message)
