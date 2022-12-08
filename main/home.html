@@ -1,5 +1,7 @@
 <meta charset="UTF-8">
 <html>
+  <link rel="stylesheet" href="home.scss">
+
   <div style = "background-color:#e7d0e4">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,46 +38,59 @@
     </head>
     <body>
     
-    <div class="topnav">
-      <a class="active" href="#home"> Productivity Tracker </a>
-      <!-- <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a> -->
-    </div>
-    
-    <div style = "display: flex">
-      <img src="header.png" style = "height: 20em">
-      <div style = "display: block; padding: 40px">
-      <p style = "font-family: Georgia, 'Times New Roman', Times, serif; 
-      color:#5c3b53; font-size:large;font-weight:bolder">Register To Begin</p>
-      <form id="register" style = "font-family: Georgia, 'Times New Roman', Times, serif; 
-      color:#0a090a; font-size:large;font-weight:bolder">
-          <!-- user input-->
-          Username:<br>
-          <input id="registerUsername" type="text" name="username" placeholder="Username" required><br><br>
-          Password:<br>
-          <input id="registerPassword" type="password" name="password" placeholder="Password" required><br><br>
-          <!-- submit button -->
-          <input type="submit" value="Submit">
-      </form>
+      <div style = "display: flex">
+        <img src="header.png" style = "height: 16em">
+        <div class="card card--inverted">
+        <h2 style = "font-family: Georgia, 'Times New Roman', Times, serif;">Register To Begin</h2>
+        <form id="register" style = "display:block">
+          <label class="input" style="display:block">
+            <!-- user input-->
+            <!-- Username:<br> -->
+            <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+            display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);"class="input__field" id="registerUsername" type="text" name="username" placeholder="Username" required>
+            <!-- Password:<br> -->
+            <input style="border:3px solid #5c3b53; background-color:#e7d0e4;  box-sizing: border-box;
+            display: block;width: 100%; padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class ="input__field" id="registerPassword" type="password" name="password" placeholder="Password" required>
+            <!-- submit button -->
+            <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight:bolder"
+            class="button-group" type="submit" value="Submit">
+          </label>
+           
+         
+        </form>
+        </div>
+        <p id="registervalue"></p>
       </div>
-      <p id="registervalue"></p>
-    </div>
+     
+     <br>
+    </head>
+    <form id="login" style = "display:flex">
+        <div class="card2 card--inverted">
+          <h2>Login To Continue</h2>
+        
+            <label class="input" style="display:block">
+              <!-- user input-->
+              <!-- Username:<br> -->
+              <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+              display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class="input__field" id="loginUsername" type="text" name="username" placeholder="Username" required>
+              <!-- Password:<br> -->
+              <input style="border:3px solid #5c3b53; background-color:#e7d0e4; box-sizing: border-box;
+              display: block;width: 100%;padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);border-radius: var(--size-radius);" class ="input__field" id="loginPassword" type="password" name="password" placeholder="Password" required>
+              <!-- submit button -->
+              <input style = "background-color: black; color:white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+              font-weight:bolder" type="submit" id="submit">
+            </label>
+             
+          </div>
+          <!-- user input-->
     
-  
-    
-  </head>
-    <p style = "font-family: Georgia, 'Times New Roman', Times, serif; 
-    color:#5c3b53; font-size:large;font-weight:bolder">Login</p>
-    <form id="login">
-        <!-- user input-->
-        Username:<br>
-        <input id="loginUsername" type="text" name="username" placeholder="Username" required><br><br>
-        Password:<br>
-        <input id="loginPassword" type="password" name="password" placeholder="Password" required><br><br>
-        <h3 style = "font-family: Georgia, 'Times New Roman', Times, serif; 
-        color:#0a090a; font-size:large;font-weight:bolder"> Select the activites you've completed today: <span name="directions"></span></h3>
-        <!-- Yoga -->
+           <!-- Yoga -->
+        <div style = "display:block">
+          <h4> Logged in as: </h4>
+          <p id="loginvalue"> </p>
+          <h3 style = "font-family: Georgia, 'Times New Roman', Times, serif; 
+          color:#0a090a; font-size:large;font-weight:bolder"> Select the activites you've completed today: <span name="directions"></span></h3>
         <input type="checkbox" id="yoga" name="yoga">
         <label for="yoga"> Yoga <span>&#x1F9D8</span></label>
         <!-- Go for a run! -->
@@ -98,8 +113,11 @@
         <label for="read"> Read <span>&#x1F4D6</span></label>
         <!-- submit button -->
         <input type="submit" value="Submit">
-    </form>
-    <h4> Logged in as: </h4>
+        <h4> Total Producitivity Points: </h4>
+        <p id="totalvalue"> </p>
+        </div>
+      </form>
+    <!-- <h4> Logged in as: </h4>
     <p id="loginvalue"> </p>
     <h4> Yoga: </h4>
     <p id="yogavalue"> </p>
@@ -115,10 +133,11 @@
     <p id="therapyvalue"> </p>
     <h4> Read: </h4>
     <p id="readvalue"> </p>
-    <!-- <h4> Total: </h4>
+    <h4> Total: </h4>
     <p id="totalvalue"> </p> -->
     
-    
+    <!-- <h4> Total Producitivity Points: </h4>
+    <p id="totalvalue"> </p> -->
 
 
     
