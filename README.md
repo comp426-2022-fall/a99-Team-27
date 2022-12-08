@@ -13,18 +13,20 @@ In this web application, we wanted to create a way to promote overall wellness/p
 4. Navigate to http://localhost:8000/ in your web browser to view our web application
 
 
+## Instructions
+
+To use our application, create a new user account under the Registration section. Next, log in with the username and password you created and click submit. To log your activity progress simply check the boxes of the activities you completed and click submit. A log of the number of times you completed the activities will display below. 
+
+
 ## Team mangement
 
 Our planning and work division (member roles) can be found in this file: [planning](https://github.com/comp426-2022-fall/a99-Team-27/blob/main/docs/management.md)
 
 
-## Instructions
-
-To use our application, create a new user account under the Registration section. Next, log in with the username and password you created and click submit. To log your activity progress simply check the boxes of the activities you completed and click submit. A log of the number of times you completed the activities will display below. 
-
 ## Future Advancements
 
 In the future, this can be expanded upon by encouraging users to do the activities more. One way to foster encouragement could be to provide the user with rewards after they complete wellness activities a certain amount of times, which will promote positive reinforcement.
+
 
 ## Video demo link
 
