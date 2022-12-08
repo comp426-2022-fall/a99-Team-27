@@ -199,13 +199,13 @@ app.post("/api/login/", (req, res) => {
         if (err){
             return console.error(err.message)
         }
-        let yoga = parseInt(row.yoga)
-        let run = parseInt(row.run)
-        let meditate = parseInt(row.meditate)
-        let breathing = parseInt(row.breathing)
-        let gym = parseInt(row.gym)
-        let therapy = parseInt(row.therapy)
-        let read = parseInt(row.read)
+        var yoga = parseInt(row.yoga)
+        var run = parseInt(row.run)
+        var meditate = parseInt(row.meditate)
+        var breathing = parseInt(row.breathing)
+        var gym = parseInt(row.gym)
+        var therapy = parseInt(row.therapy)
+        var read = parseInt(row.read)
 
         if (typeof data.yoga != "undefined"){
             yoga += 1
