@@ -246,7 +246,7 @@ app.post("/api/login/", (req, res) => {
               })
         //var list = [row.yoga, row.run, row.meditate, row.breathing, row.gym, row.therapy, row.read]
         return row
-            ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":row.username, "yoga":parseInt(yoga), "run":parseInt(run), "meditate":parseInt(meditate),"breathing":parseInt(breathing), "gym":parseInt(gym), "therapy":parseInt(therapy), "read":parseInt(read), "total": total}) & console.log("LOGIN") 
+            ? console.log(row) & res.status(200).json({"status":"LOGIN", "user":row.username, "yoga":parseInt(yoga), "run":parseInt(run), "meditate":parseInt(meditate),"breathing":parseInt(breathing), "gym":parseInt(gym), "therapy":parseInt(therapy), "read":parseInt(read)}) & console.log("LOGIN") 
             : console.log("not found") & res.status(200).json({"status":"BAD"}) & console.log("NO USER")
     });
 });

@@ -22,8 +22,8 @@ async function logingin(event){
         document.getElementById("gymvalue").innerHTML = loginResult.gym
         document.getElementById("therapyvalue").innerHTML = loginResult.therapy
         document.getElementById("readvalue").innerHTML = loginResult.read
-        document.getElementById("totalvalue").innerHTML = loginResult.yoga + loginResult.run + loginResult.meditate 
-        + loginResult.breathing + loginResult.gym + loginResult.therapy + loginResult.read
+        // document.getElementById("totalvalue").innerHTML = loginResult.yoga + loginResult.run + loginResult.meditate 
+        // + loginResult.breathing + loginResult.gym + loginResult.therapy + loginResult.read
     }else {
         document.getElementById("loginvalue").innerHTML=loginResult.status
     }
