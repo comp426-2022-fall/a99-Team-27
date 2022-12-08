@@ -22,9 +22,6 @@ async function logingin(event){
         document.getElementById("gymvalue").innerHTML = loginResult.gym
         document.getElementById("therapyvalue").innerHTML = loginResult.therapy
         document.getElementById("readvalue").innerHTML = loginResult.read
-
-
-
     }else {
         document.getElementById("loginvalue").innerHTML=loginResult.status
     }
@@ -45,7 +42,7 @@ async function registering(event){
     // console.log(formEvent);
     const formData = new FormData(formEvent);
     const registerResult = await sendData({formData, url})
-    document.getElementById("registervalue").innerHTML="You successfully registered"
+    document.getElementById("registervalue").innerHTML="You successfully registered!"
 }
 
 
